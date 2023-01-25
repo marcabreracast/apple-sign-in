@@ -49,6 +49,7 @@
 		3E86D077297AD710007103B6 /* apple-sign-inUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apple-sign-inUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E86D07B297AD710007103B6 /* apple_sign_inUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apple_sign_inUITests.swift; sourceTree = "<group>"; };
 		3E86D07D297AD710007103B6 /* apple_sign_inUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apple_sign_inUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3E86D08A297E8D69007103B6 /* apple-sign-in.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "apple-sign-in.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		3E86D059297AD70E007103B6 /* apple-sign-in */ = {
 			isa = PBXGroup;
 			children = (
+				3E86D08A297E8D69007103B6 /* apple-sign-in.entitlements */,
 				3E86D05A297AD70E007103B6 /* AppDelegate.swift */,
 				3E86D05C297AD70E007103B6 /* SceneDelegate.swift */,
 				3E86D05E297AD70E007103B6 /* ViewController.swift */,
@@ -435,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "apple-sign-in/apple-sign-in.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QX5CR2FTN2;
@@ -463,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "apple-sign-in/apple-sign-in.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QX5CR2FTN2;
