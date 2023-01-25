@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  apple-sign-in
 //
 //  Created by Mar Cabrera on 20/01/2023.
@@ -8,7 +8,7 @@
 import UIKit
 import AuthenticationServices
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var appleSignInButton: ASAuthorizationAppleIDButton!
 
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: ASAuthorizationControllerDelegate {
+extension LoginViewController: ASAuthorizationControllerDelegate {
     // Delegate that handles successful Sign In
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
