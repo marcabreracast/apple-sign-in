@@ -7,6 +7,7 @@
 
 import UIKit
 import AuthenticationServices
+import RealmSwift
 
 class LoginViewController: UIViewController {
 
@@ -42,12 +43,19 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             let fullName = appleIDCredential.fullName
             let email = appleIDCredential.email
 
-            print(userIdentifier)
-            print(fullName)
-            print(email)
+            guard let identityToken = appleIDCredential.identityToken else {
+                return
+            }
+
+            let decodedToken = String(decoding: identityToken, as: UTF8.self)
+
+            print(decodedToken)
+
             // Note: If the user decides to hide their email on authentication, full name will return an empty string and email will be nil
-            
+
             // Retrieve AppleID token so I can send it to Realm and authenticate myself
+
+            realmSignIn(appleToken: decodedToken)
         }
     }
 
@@ -55,6 +63,19 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         print("Oops! There was an error")
         // Display alert for error
+    }
+
+    private func realmSignIn(appleToken: String) {
+        let credentials = Credentials.apple(idToken: appleToken)
+
+        app.login(credentials: credentials) { (result) in
+            switch result {
+            case .failure(let error):
+                print("Login failed: \(error.localizedDescription)")
+            case .success(let user):
+                print("Successful Login")
+            }
+        }
     }
 }
 
