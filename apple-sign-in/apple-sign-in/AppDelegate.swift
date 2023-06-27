@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import RealmSwift
+
+let app = App(id: "apple-sign-in-izkyz")
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -71,9 +71,14 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         app.login(credentials: credentials) { (result) in
             switch result {
             case .failure(let error):
-                print("Login failed: \(error.localizedDescription)")
-            case .success(let user):
-                print("Successful Login")
+                print("Realm Login failed: \(error.localizedDescription)")
+                
+            case .success(_):
+                DispatchQueue.main.async {
+                    print("Successful Login")
+                    self.performSegue(withIdentifier: "goToWelcomeViewController", sender: nil)
+                }
+
             }
         }
     }
